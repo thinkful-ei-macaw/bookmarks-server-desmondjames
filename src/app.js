@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const {NODE_ENV} = require('./config')
-
+const bookmarksRouter = require('./bookmarks/bookmarks-router')
 const app = express();
 
 const morganOption = (NODE_ENV === 'production')
@@ -13,7 +13,13 @@ const morganOption = (NODE_ENV === 'production')
 
 app.use(morgan(morganOption));
 app.use(helmet());
+
+// app.get('/bookmarks', (req, res, next) => {
+// res.send('All articles')
+// })
+
 app.use(cors());
+app.use(bookmarksRouter)
 
 app.get('/', (req,res)=> {
     res.send('Hello, world!')
