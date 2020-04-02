@@ -2,14 +2,15 @@
   "name": "express-bolierplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
+    "mitgrate:test": "env NODE_ENV=test npm run migrate",
     "predeploy": "npm audit",
-    "deply": "git push heroku master"
+    "deploy": "git push heroku master"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +21,11 @@
     "express": "^4.17.1",
     "helmet": "^3.22.0",
     "knex": "^0.20.13",
+    "logger": "0.0.1",
     "morgan": "^1.10.0",
-    "pg": "^8.0.0"
+    "pg": "^8.0.0",
+    "uuid": "^7.0.3",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "chai": "^4.2.0",
