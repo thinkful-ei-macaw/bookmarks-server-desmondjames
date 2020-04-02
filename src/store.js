@@ -1,6 +1,6 @@
 const uuid = require('uuid/v4')
 
-const bookmarks = [
+const bookmark = [
   { id: uuid(),
     title: 'Thinkful',
     url: 'https://www.thinkful.com',
@@ -18,4 +18,4 @@ const bookmarks = [
     rating: 5 },
 ]
 
-module.exports = { bookmarks }
+module.exports = { bookmark }
